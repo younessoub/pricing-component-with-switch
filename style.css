@@ -1,0 +1,262 @@
+:root {
+    --Linear-Gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    --VeryLightGrayishBlue: hsl(240, 78%, 98%);
+    --LightGrayishBlue: hsl(234, 14%, 74%);
+    --GrayishBlue: hsl(233, 13%, 49%);
+    --DarkGrayishBlue: hsl(232, 13%, 33%);
+    --font-size-body: 15px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--VeryLightGrayishBlue);
+}
+
+/* utility classes start */
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* utility classes end */
+.bg-top,
+.bg-bottom {
+    position: absolute;
+    z-index: -10;
+}
+
+.bg-top {
+    top: 0;
+    right: 0;
+}
+
+.bg-bottom {
+    bottom: 0;
+    left: 0;
+}
+
+.main-wrapper {
+    padding: 30px 5%;
+}
+
+h1 {
+    color: var(--GrayishBlue);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.switch-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+    background-image: var(--Linear-Gradient);
+}
+
+.slider:hover {
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(236, 72%, 79%));
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(32px);
+    -ms-transform: translateX(32px);
+    transform: translateX(32px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.switch-div small {
+    color: var(--LightGrayishBlue);
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cards.annuall {
+    display: none;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card.professional {
+    background-image: linear-gradient(to bottom right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.card-type {
+    color: var(--GrayishBlue);
+    margin-bottom: 20px;
+}
+
+.card.professional .card-type {
+    color: var(--VeryLightGrayishBlue);
+}
+
+.card h2 {
+    font-size: 60px;
+    color: var(--DarkGrayishBlue);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card.professional h2 {
+    color: var(--VeryLightGrayishBlue);
+}
+
+.card h2 span {
+    font-size: 30px;
+}
+
+hr {
+    border-color: var(--VeryLightGrayishBlue);
+}
+
+.features {
+    margin-bottom: 30px;
+}
+
+.features p {
+    margin: 20px 0;
+    color: var(--GrayishBlue);
+}
+
+.card.professional p {
+    color: var(--VeryLightGrayishBlue);
+}
+
+
+button {
+    border: none;
+    width: 100%;
+    padding: 15px 0;
+    background-image: var(--Linear-Gradient);
+    color: var(--VeryLightGrayishBlue);
+    letter-spacing: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-image: linear-gradient(to right, var(--VeryLightGrayishBlue), var(--VeryLightGrayishBlue));
+    border: 1px solid var(--DarkGrayishBlue);
+    color: var(--DarkGrayishBlue);
+}
+
+.card.professional button {
+    background-image: linear-gradient(to right, var(--VeryLightGrayishBlue), var(--VeryLightGrayishBlue));
+    color: var(--DarkGrayishBlue);
+}
+
+.card.professional button:hover {
+    background-image: unset;
+    background-color: transparent;
+    border: 1px solid var(--VeryLightGrayishBlue);
+    color: var(--VeryLightGrayishBlue);
+}
+
+
+
+
+
+
+.attribution {
+    margin: 30px 0;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width:950px) {
+    .main-wrapper {
+        padding: 100px 10%;
+
+    }
+
+    .cards {
+        margin-top: 50px;
+    }
+
+    .cards.monthly,
+    .cards.annuall {
+        flex-direction: row;
+    }
+
+    .card {
+        flex: 1;
+    }
+
+    .card.basic {
+        transform: scale(.95) translateX(35px);
+    }
+
+    .card.master {
+        transform: scale(.95) translateX(-35px);
+    }
+
+
+}
